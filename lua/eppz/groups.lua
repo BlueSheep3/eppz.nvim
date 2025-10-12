@@ -32,6 +32,7 @@ M.setup = function()
 		["@constant"] = { fg = colors.constant },
 		["@constant.builtin"] = { fg = colors.null },
 		["@string"] = { fg = colors.string },
+		["@string.escape"] = { fg = colors.string_escape },
 		["@character"] = { fg = colors.char },
 		["@boolean"] = { fg = colors.constant },
 		["@number"] = { fg = colors.number },
@@ -41,8 +42,9 @@ M.setup = function()
 		["@type.builtin"] = { fg = colors.builtin },
 
 		["@attribute"] = { fg = colors.meta },
-		["@attribute.buitlin"] = { fg = colors.meta_dark },
+		["@attribute.builtin"] = { fg = colors.meta_dark },
 		["@module"] = { fg = colors.module },
+		["@label"] = { fg = colors.meta },
 
 		["@function"] = { fg = colors.func },
 		["@function.builtin"] = { fg = colors.func, bold = true },
@@ -60,11 +62,14 @@ M.setup = function()
 		["@operator"] = { fg = colors.symbol },
 		["@comment"] = { fg = colors.comment },
 
-		-- = Language specific =
+		-- == Language specific ==
 
 		-- enumMembers in rust behave much closer to types
 		-- (other languages will default to @constant)
 		["@lsp.type.enumMember.rust"] = { fg = colors.type },
+
+		-- for some reason, the Self type just shows up as a regular type
+		["@lsp.type.selfTypeKeyword"] = { fg = colors.builtin },
 
 		-- events in C# for some reason show up as types,
 		-- even though they behave much closer to functions
