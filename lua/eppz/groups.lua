@@ -87,6 +87,11 @@ M.setup = function()
 	-- which means the syntactical highlighting will be used instead.
 	vim.api.nvim_set_hl(0, "@lsp.type.keyword.cs", {})
 
+	-- this token overrides both the escape character highlighting
+	-- and the character highlighting that the syntax can already 
+	-- parse perfectly fine on its own.
+	vim.api.nvim_set_hl(0, "@lsp.type.string.cs", {})
+
 	return G
 end
 
