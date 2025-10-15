@@ -3,7 +3,7 @@ local M = {}
 local colors = require("eppz.palette")
 
 M.setup = function()
-	local G = {
+	return {
 		-- ==== Standard ====
 
 		-- general
@@ -14,7 +14,7 @@ M.setup = function()
 		LineNr = { fg = colors.line_nr, bg = colors.bglight },
 
 		-- text
-		Comment = { fg = colors.comment, italic = true },
+		Comment = { fg = colors.comment },
 		Special = { fg = colors.special },
 		Identifier = { fg = colors.variable },
 
@@ -71,6 +71,15 @@ M.setup = function()
 		-- for some reason, the Self type just shows up as a regular type
 		["@lsp.type.selfTypeKeyword"] = { fg = colors.builtin },
 
+		["@lsp.mod.consuming"] = { bold = true },
+		["@lsp.mod.mutable"] = { italic = true },
+
+		-- for some reason, inside macros this will be the token used for
+		-- every keyword, even though the syntactic highlighting already
+		-- works perfectly fine outside macros,
+		-- so just disable this semantic highlighting token.
+		["@lsp.type.keyword.rust"] = {},
+
 		-- events in C# for some reason show up as types,
 		-- even though they behave much closer to functions
 		["@lsp.type.event.cs"] = { fg = colors.func, italic = true },
@@ -79,20 +88,18 @@ M.setup = function()
 		-- but C# doesnt let me differentiate between constans and statics,
 		-- so both of them will get the same color
 		["@lsp.typemod.property.static.cs"] = { fg = colors.loc },
+
+		-- the newer C# LSPs use the token @lsp.type.keyword.cs for all keywords,
+		-- but i want to be able to differentiate all of the keywords,
+		-- so this will just disable @lsp.type.keyword.cs completely,
+		-- which means the syntactical highlighting will be used instead.
+		["@lsp.type.keyword.cs"] = {},
+
+		-- this token overrides both the escape character highlighting
+		-- and the character highlighting that the syntax can already 
+		-- parse perfectly fine on its own.
+		["@lsp.type.string.cs"] = {},
 	}
-
-	-- the newer C# LSPs use the token @lsp.type.keyword.cs for all keywords,
-	-- but i want to be able to differentiate all of the keywords,
-	-- so this will just disable @lsp.type.keyword.cs completely,
-	-- which means the syntactical highlighting will be used instead.
-	vim.api.nvim_set_hl(0, "@lsp.type.keyword.cs", {})
-
-	-- this token overrides both the escape character highlighting
-	-- and the character highlighting that the syntax can already 
-	-- parse perfectly fine on its own.
-	vim.api.nvim_set_hl(0, "@lsp.type.string.cs", {})
-
-	return G
 end
 
 
