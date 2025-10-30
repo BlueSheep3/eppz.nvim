@@ -1,10 +1,11 @@
 return {
 	-- general
 	bg = "#09090b",
+	bgfloat = "#17161a",
 	bglight = "#101018",
 	visual = "#3a3a3a",
 	cursor_line_nr = "#606080",
-	line_nr = "#3f3f44",
+	line_nr = "#484852",
 
 	-- text
 	fg = "#dddcd3",
@@ -35,5 +36,9 @@ return {
 
 	meta = "#5c69a6",
 	meta_dark = "#454e7f",
-	special = "#bb54a9",
+	special = "#bb60a9",
+
+	quote = "#9c9d9d",
+	unchecked = "#ba6544",
+	checked = "#3ca587",
 }

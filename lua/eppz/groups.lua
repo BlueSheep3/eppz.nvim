@@ -8,6 +8,7 @@ M.setup = function()
 
 		-- general
 		Normal = { fg = colors.fg, bg = colors.bg },
+		NormalFloat = { fg = colors.fg, bg = colors.bgfloat },
 		Visual = { bg = colors.visual },
 		CursorLine = { bg = colors.bglight },
 		CursorLineNr = { fg = colors.cursor_line_nr, bg = colors.bglight },
@@ -62,6 +63,18 @@ M.setup = function()
 		["@operator"] = { fg = colors.symbol },
 		["@comment"] = { fg = colors.comment },
 
+		["@markup.heading"] = { fg = colors.module, bold = true },
+		["@markup.quote"] = { fg = colors.quote, italic = true },
+		["@markup.math"] = { fg = colors.variable },
+		["@markup.link"] = { fg = colors.string, underline = true },
+		["@markup.link"] = { fg = colors.string },
+		["@markup.link.label"] = { fg = colors.char, italic = true },
+		["@markup.link.url"] = { fg = colors.string, underline = true },
+		["@markup.raw"] = { fg = colors.constant },
+		["@markup.list"] = { fg = colors.variable },
+		["@markup.list.unchecked"] = { fg = colors.unchecked },
+		["@markup.list.checked"] = { fg = colors.checked },
+
 		-- == Language specific ==
 
 		-- enumMembers in rust behave much closer to types
@@ -99,8 +112,11 @@ M.setup = function()
 		-- and the character highlighting that the syntax can already 
 		-- parse perfectly fine on its own.
 		["@lsp.type.string.cs"] = {},
+
+		-- a lot of keywords in java get incorrectly classified as modifiers,
+		-- and this token actually links to @type instead of @keyword.modifier.
+		["@lsp.type.modifier.java"] = {},
 	}
 end
-
 
 return M
