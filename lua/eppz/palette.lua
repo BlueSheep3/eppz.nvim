@@ -6,6 +6,7 @@ return {
 	visual = "#3a3a3a",
 	cursor_line_nr = "#606080",
 	line_nr = "#484852",
+	visual_whitespace = "#74736c",
 
 	-- text
 	fg = "#dddcd3",

@@ -1,4 +1,6 @@
-A colorscheme for Neovim that tries to mimick the [eppz!](https://github.com/Geri-Borbas/VSCode.Extension.eppz_Code) color theme for VSCode.
+A colorscheme for Neovim that tries to mimick the
+[eppz!](https://github.com/Geri-Borbas/VSCode.Extension.eppz_Code)
+color theme for VSCode.
 
 
 # Installation
@@ -23,3 +25,9 @@ You can install another colorscheme as a fallback when this one doesn't define a
 colorscheme someotherscheme
 colorscheme eppz
 ```
+
+## Treesitter
+
+This colorscheme heavily relies on [treesitter](nvim-treesitter/nvim-treesitter)
+syntax highlighting, so make sure you have installed both treesitter itself,
+as well as the syntax for the specific language you are using.

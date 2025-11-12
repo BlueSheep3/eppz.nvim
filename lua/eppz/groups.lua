@@ -13,6 +13,8 @@ M.setup = function()
 		CursorLine = { bg = colors.bglight },
 		CursorLineNr = { fg = colors.cursor_line_nr, bg = colors.bglight },
 		LineNr = { fg = colors.line_nr, bg = colors.bglight },
+		-- compatibility with 'mcauley-penney/visual-whitespace.nvim'
+		VisualNonText = { fg = colors.visual_whitespace, bg = colors.visual },
 
 		-- text
 		Comment = { fg = colors.comment },
@@ -51,7 +53,7 @@ M.setup = function()
 		["@function.builtin"] = { fg = colors.func, bold = true },
 		["@function.macro"] = { fg = colors.func, bold = true },
 		["@lsp.type.macro"] = { fg = colors.func, bold = true },
-		["@constructor"] = { fg = colors.func_other },
+		["@constructor"] = { fg = colors.type },
 
 		["@keyword"] = { fg = colors.keyword },
 		["@keyword.operator"] = { fg = colors.other },
@@ -67,13 +69,17 @@ M.setup = function()
 		["@markup.quote"] = { fg = colors.quote, italic = true },
 		["@markup.math"] = { fg = colors.variable },
 		["@markup.link"] = { fg = colors.string, underline = true },
-		["@markup.link"] = { fg = colors.string },
 		["@markup.link.label"] = { fg = colors.char, italic = true },
 		["@markup.link.url"] = { fg = colors.string, underline = true },
 		["@markup.raw"] = { fg = colors.constant },
 		["@markup.list"] = { fg = colors.variable },
 		["@markup.list.unchecked"] = { fg = colors.unchecked },
 		["@markup.list.checked"] = { fg = colors.checked },
+
+		["@tag"] = { fg = colors.type },
+		["@tag.builtin"] = { fg = colors.builtin },
+		["@tag.attribute"] = { fg = colors.variable },
+		["@tag.delimiter"] = { fg = colors.symbol },
 
 		-- == Language specific ==
 
@@ -98,7 +104,7 @@ M.setup = function()
 		["@lsp.type.event.cs"] = { fg = colors.func, italic = true },
 
 		-- i would want to use constant color for constants,
-		-- but C# doesnt let me differentiate between constans and statics,
+		-- but C# doesnt let me differentiate between constants and statics,
 		-- so both of them will get the same color
 		["@lsp.typemod.property.static.cs"] = { fg = colors.loc },
 
