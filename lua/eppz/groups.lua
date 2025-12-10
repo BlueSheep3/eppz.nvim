@@ -16,14 +16,46 @@ M.setup = function()
 		-- compatibility with 'mcauley-penney/visual-whitespace.nvim'
 		VisualNonText = { fg = colors.visual_whitespace, bg = colors.visual },
 
-		-- text
-		Comment = { fg = colors.comment },
-		Special = { fg = colors.special },
-		Identifier = { fg = colors.variable },
 
-		-- literals
+		-- script
+		Comment = { fg = colors.comment },
+
 		Constant = { fg = colors.constant },
 		String = { fg = colors.string },
+		Character = { fg = colors.char },
+		Number = { fg = colors.number },
+		Boolean = { fg = colors.constant },
+		Float = { fg = colors.number },
+
+		Identifier = { fg = colors.variable },
+		Function = { fg = colors.func },
+
+		Statement = { fg = colors.func },
+		Conditional = { fg = colors.keyword },
+		Repeat = { fg = colors.keyword },
+		Label = { fg = colors.keyword },
+		Operator = { fg = colors.symbol },
+		Keyword = { fg = colors.keyword },
+		-- Exception = { fg = colors. },
+
+		PreProc = { fg = colors.meta },
+		Include = { fg = colors.meta },
+		Define = { fg = colors.meta },
+		Macro = { fg = colors.meta },
+		PreCondit = { fg = colors.meta },
+
+		Type = { fg = colors.type },
+		StorageClass = { fg = colors.modifier },
+		Structure = { fg = colors.keyword },
+		Typedef = { fg = colors.type },
+
+		Special = { fg = colors.special },
+		SpecialChar = { fg = colors.special },
+		-- Tag = { fg = colors. },
+		-- Delimiter = { fg = colors. },
+		-- SpecialComment = { fg = colors. },
+		-- Debug = { fg = colors. },
+
 
 
 		-- ==== Treesitter ====
@@ -81,7 +113,9 @@ M.setup = function()
 		["@tag.attribute"] = { fg = colors.variable },
 		["@tag.delimiter"] = { fg = colors.symbol },
 
+
 		-- == Language specific ==
+
 
 		-- enumMembers in rust behave much closer to types
 		-- (other languages will default to @constant)
@@ -98,6 +132,7 @@ M.setup = function()
 		-- works perfectly fine outside macros,
 		-- so just disable this semantic highlighting token.
 		["@lsp.type.keyword.rust"] = {},
+
 
 		-- events in C# for some reason show up as types,
 		-- even though they behave much closer to functions
@@ -119,9 +154,16 @@ M.setup = function()
 		-- parse perfectly fine on its own.
 		["@lsp.type.string.cs"] = {},
 
-		-- a lot of keywords in java get incorrectly classified as modifiers,
+
+		-- a lot of keywords in Java get incorrectly classified as modifiers,
 		-- and this token actually links to @type instead of @keyword.modifier.
 		["@lsp.type.modifier.java"] = {},
+
+
+		-- @lsp.type.variable.c has a higher priority than @constant.c,
+		-- so this uses a token with even higher priority to use the constant color.
+		["@lsp.typemod.variable.readonly.c"] = { fg = colors.constant },
+		["@lsp.typemod.variable.readonly.cpp"] = { fg = colors.constant },
 	}
 end
 
