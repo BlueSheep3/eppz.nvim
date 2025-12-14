@@ -28,6 +28,6 @@ colorscheme eppz
 
 ## Treesitter
 
-This colorscheme heavily relies on [treesitter](nvim-treesitter/nvim-treesitter)
+This colorscheme heavily relies on [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 syntax highlighting, so make sure you have installed both treesitter itself,
 as well as the syntax for the specific language you are using.

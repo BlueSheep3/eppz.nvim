@@ -133,6 +133,9 @@ M.setup = function()
 		-- so just disable this semantic highlighting token.
 		["@lsp.type.keyword.rust"] = {},
 
+		-- associated type aliases get highlighted as being constants???
+		["@lsp.type.typeAlias.rust"] = { fg = colors.type },
+
 
 		-- events in C# for some reason show up as types,
 		-- even though they behave much closer to functions
