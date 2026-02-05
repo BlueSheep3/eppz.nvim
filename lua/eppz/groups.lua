@@ -16,6 +16,12 @@ M.setup = function()
 		-- compatibility with 'mcauley-penney/visual-whitespace.nvim'
 		VisualNonText = { fg = colors.visual_whitespace, bg = colors.visual },
 
+		StatusLine = { bg = colors.statusline },
+		StatusLineNC = { bg = colors.unimportant },
+		TabLine = { bg = colors.unimportant },
+		TabLineFill = { bg = colors.unimportant },
+		TabLineSel = { bg = colors.current_tab },
+
 
 		-- script
 		Comment = { fg = colors.comment },
@@ -126,6 +132,8 @@ M.setup = function()
 
 		["@lsp.mod.consuming"] = { bold = true },
 		["@lsp.mod.mutable"] = { italic = true },
+
+		["@lsp.type.lifetime.rust"] = { fg = colors.lifetime },
 
 		-- for some reason, inside macros this will be the token used for
 		-- every keyword, even though the syntactic highlighting already

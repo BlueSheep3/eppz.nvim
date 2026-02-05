@@ -7,6 +7,11 @@ return {
 	cursor_line_nr = "#606080",
 	line_nr = "#484852",
 	visual_whitespace = "#74736c",
+	statusline = "#383842",
+	unimportant = "#27272d",
+	current_tab = "#3050c0",
+	-- current_tab = "#505158",
+	-- current_tab_fg = "#2280fb",
 
 	-- text
 	fg = "#dddcd3",
@@ -38,6 +43,7 @@ return {
 	meta = "#5c69a6",
 	meta_dark = "#454e7f",
 	special = "#bb60a9",
+	lifetime = "#644ba0",
 
 	quote = "#9c9d9d",
 	unchecked = "#ba6544",
