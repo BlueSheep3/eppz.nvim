@@ -175,6 +175,11 @@ M.setup = function()
 		-- so this uses a token with even higher priority to use the constant color.
 		["@lsp.typemod.variable.readonly.c"] = { fg = colors.constant },
 		["@lsp.typemod.variable.readonly.cpp"] = { fg = colors.constant },
+
+
+		-- in a definition of an error type in zig, the error tags
+		-- just show up as "variable.zig", despite behaving more like enum members
+		["@lsp.type.errorTag.zig"] = { fg = colors.constant },
 	}
 end
 
