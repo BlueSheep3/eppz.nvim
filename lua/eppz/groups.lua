@@ -123,15 +123,16 @@ M.setup = function()
 		-- == Language specific ==
 
 
+		["@lsp.mod.consuming"] = { bold = true },
+		["@lsp.mod.mutable"] = { italic = true },
+
+
 		-- enumMembers in rust behave much closer to types
 		-- (other languages will default to @constant)
 		["@lsp.type.enumMember.rust"] = { fg = colors.type },
 
 		-- for some reason, the Self type just shows up as a regular type
 		["@lsp.type.selfTypeKeyword"] = { fg = colors.builtin },
-
-		["@lsp.mod.consuming"] = { bold = true },
-		["@lsp.mod.mutable"] = { italic = true },
 
 		["@lsp.type.lifetime.rust"] = { fg = colors.lifetime },
 
@@ -180,6 +181,20 @@ M.setup = function()
 		-- in a definition of an error type in zig, the error tags
 		-- just show up as "variable.zig", despite behaving more like enum members
 		["@lsp.type.errorTag.zig"] = { fg = colors.constant },
+
+		-- @lsp.type.string.zig overrides the treesitter token for escape sequences.
+		["@lsp.type.escapeSequence.zig"] = { fg = colors.string_escape },
+
+		-- disables semantic highlighting of comments in zig, because comments really
+		-- don't have anything that treesitter can't parse, and the semantic highlighting
+		-- can override highlighting from other things such as diagnostic comments.
+		["@lsp.type.comment.zig"] = {},
+
+		-- builtin types types don't have the darker color in zig, and in some cases
+		-- variable declerations of types may incorrectly be classified as variables,
+		-- instead of types. both of these could potentially be fixed by disabling
+		-- semantic highlighting of variables and types. however, disabling those
+		-- makes you lose helpfull semantic highlighting in a lot of situations.
 	}
 end
 
