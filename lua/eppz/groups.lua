@@ -190,6 +190,11 @@ M.setup = function()
 		-- can override highlighting from other things such as diagnostic comments.
 		["@lsp.type.comment.zig"] = {},
 
+		-- syntax highlighting is good enough to be able to detect keywords,
+		-- and zig's lsp describes most keywords as just "@lsp.type.keyword.zig",
+		-- instead of a more specific description, like "keyword.modifier.zig".
+		["@lsp.type.keyword.zig"] = {},
+
 		-- builtin types types don't have the darker color in zig, and in some cases
 		-- variable declerations of types may incorrectly be classified as variables,
 		-- instead of types. both of these could potentially be fixed by disabling
