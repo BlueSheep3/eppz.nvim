@@ -2,6 +2,8 @@ A colorscheme for Neovim that tries to mimick the
 [eppz!](https://github.com/Geri-Borbas/VSCode.Extension.eppz_Code)
 color theme for VSCode.
 
+This colorscheme normally uses true colors, but it also has a fallback for 16 color terminals.
+
 
 # Installation
 
