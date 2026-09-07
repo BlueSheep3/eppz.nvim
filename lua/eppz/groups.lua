@@ -9,17 +9,17 @@ M.setup = function()
 		-- general
 		Normal = { fg = colors.fg, bg = colors.bg, ctermfg = 7, ctermbg = 0 },
 		NormalFloat = { fg = colors.fg, bg = colors.bgfloat, ctermfg = 15, ctermbg = 8 },
-		Visual = { bg = colors.visual, ctermbg = 15 },
+		Visual = { bg = colors.visual, ctermbg = 14 },
 		CursorLine = { bg = colors.bglight },
 		CursorLineNr = { fg = colors.cursor_line_nr, bg = colors.bglight },
 		LineNr = { fg = colors.line_nr, bg = colors.bglight },
 		-- compatibility with 'mcauley-penney/visual-whitespace.nvim'
-		VisualNonText = { fg = colors.visual_whitespace, bg = colors.visual, ctermfg = 0, ctermbg = 15 },
+		VisualNonText = { fg = colors.visual_whitespace, bg = colors.visual, ctermfg = 0, ctermbg = 14 },
 
-		StatusLine = { bg = colors.statusline, ctermbg = 7 },
-		StatusLineNC = { bg = colors.unimportant, ctermbg = 7 },
-		TabLine = { bg = colors.unimportant, ctermbg = 7 },
-		TabLineFill = { bg = colors.unimportant, ctermbg = 7 },
+		StatusLine = { bg = colors.statusline, ctermbg = 4 },
+		StatusLineNC = { bg = colors.unimportant, ctermbg = 6 },
+		TabLine = { bg = colors.unimportant, ctermbg = 6 },
+		TabLineFill = { bg = colors.unimportant, ctermbg = 6 },
 		TabLineSel = { bg = colors.current_tab, ctermbg = 12 },
 
 
